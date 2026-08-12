@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Pass Booking</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Razorpay Checkout SDK -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+
+  <div class="card">
+    <h2>🎟️ Event Ticket Desk</h2>
+    <div id="statusBox" class="status-box hidden"></div>
+
+    <!-- STEP 1: SIGNUP FORM -->
+    <form id="signupForm" class="step">
+      <div class="input-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" required placeholder="John Doe" autocomplete="name">
+      </div>
+      <div class="input-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" required placeholder="name@example.com" autocomplete="email">
+      </div>
+      <div class="input-group">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" required pattern="[0-9]{10}" placeholder="10 Digit Mobile No" autocomplete="tel">
+      </div>
+      <div class="input-group">
+        <label for="seats">Number of Seats (₹200 / seat)</label>
+        <input type="number" id="seats" min="1" max="10" value="1" required>
+      </div>
+      <button type="submit" id="sendOtpBtn" class="btn">Send Verification OTP</button>
+    </form>
+
+    <!-- STEP 2: OTP FORM -->
+    <form id="otpForm" class="step hidden">
+      <div class="input-group">
+        <label for="otpInput">Enter 6-Digit OTP</label>
+        <input type="text" id="otpInput" maxlength="6" pattern="[0-9]{6}" placeholder="123456" required>
+      </div>
+      <button type="submit" id="verifyOtpBtn" class="btn">Verify OTP & Proceed</button>
+    </form>
+
+    <!-- STEP 3: PAYMENT SUMMARY -->
+    <div id="stepPayment" class="step hidden">
+      <div class="summary-box">
+        <p><strong>Seats Booked:</strong> <span id="summarySeats">0</span></p>
+        <p><strong>Total Amount:</strong> <span id="summaryAmount">₹0</span></p>
+      </div>
+      <button id="payNowBtn" class="btn btn-pay">Pay via Razorpay / UPI</button>
+    </div>
+
+    <!-- STEP 4: SUCCESS SCREEN -->
+    <div id="stepSuccess" class="step hidden text-center">
+      <div class="success-icon">🎉</div>
+      <h3>Booking Confirmed!</h3>
+      <p>Aapki booking successfully store ho gayi hai aur ticket pass aapke email par bhej diya gaya hai.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

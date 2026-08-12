@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #1f2937;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #374151;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  border-color: #2563eb;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn:hover {
+  background-color: #1d4ed8;
+}
+
+.btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+
+.btn-pay {
+  background-color: #10b981;
+}
+
+.btn-pay:hover {
+  background-color: #059669;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.status-box {
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.status-box.info { background: #e0f2fe; color: #0369a1; }
+.status-box.error { background: #fee2e2; color: #b91c1c; }
+.status-box.success { background: #dcfce7; color: #15803d; }
+
+.summary-box {
+  background: #f9fafb;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+}
+
+.summary-box p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.text-center { text-align: center; }
+.success-icon { font-size: 3rem; margin-bottom: 10px; }
